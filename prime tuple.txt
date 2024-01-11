@@ -1,0 +1,29 @@
+s=set()
+def fun(x):
+    prime = [True for i in range(x + 1)] 
+    p = 2
+    while (p * p <= x): 
+        if (prime[p] == True): 
+            for i in range(p * 2, x + 1, p): 
+                prime[i] = False
+        p += 1
+    prime[0]= False
+    prime[1]= False
+    for p in range(x + 1): 
+        if prime[p]: 
+            s.add(p) 
+
+fun(1000001)
+arr=[0]*10000000
+count=0
+for z in range(5,1000001):
+    if z in s and z-2 in s:
+        
+        count+=1
+        arr[z]=count
+    else:
+        arr[z]=count  
+  
+for _ in range(int(input())):
+    n=int(input())
+    print(arrr[n])
